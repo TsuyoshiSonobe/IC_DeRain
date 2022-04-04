@@ -56,7 +56,7 @@ def predict(image):
 if __name__ == '__main__':
     args = get_args()
 
-    model = Generator().cuda()
+    model = torch.Generator(device='cuda')
     model.load_state_dict(torch.load('./weights/gen.pkl'))
 
     if args.mode == 'demo':
